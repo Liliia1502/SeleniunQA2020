@@ -37,6 +37,8 @@ public class home_work6 {
 
         System.out.println("End test1");
         Thread.sleep(2000);
+
+
         System.out.println("Start test2");
         try {
             button = webDriver.findElement(By.cssSelector("#confirm > button"));

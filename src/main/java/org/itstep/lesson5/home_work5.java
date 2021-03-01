@@ -22,7 +22,7 @@ import java.util.List;
             System.setProperty("webdriver.chrome.driver", "C:\\Webdrivers\\chromedriver.exe");
             WebDriver webDriver = new ChromeDriver();
             webDriver.navigate().to("file:///C:/Users/%D0%9B%D0%B8%D0%BB%D0%B8%D1%8F/Downloads/Lesson4%20hw/select_hw.html");
-            WebElement selectElement = webDriver.findElement(By.cssSelector("#auto"));
+            WebElement selectElement = webDriver.findElement(By.cssSelector("#auto"));// #out2
             Select select = new Select(selectElement);
 
             List<WebElement> options = select.getOptions();
