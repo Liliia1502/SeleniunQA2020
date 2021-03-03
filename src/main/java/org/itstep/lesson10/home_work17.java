@@ -25,41 +25,12 @@ public class home_work17 {
         System.out.println("Start test1");
         webDriver.get(url);
 
-        Robot robot = new Robot();
-        robot.keyPress(KeyEvent.VK_F11);
-        WebElement element = webDriver.findElement(By.cssSelector("body > div > section > div > div > div > p > span "));
-        //int x = element.getLocation().getX();
-        //int y = element.getLocation().getY();
-
-        //System.out.println(" х = " + x);
-        //System.out.println(" y = " + y);
-        //robot.mouseMove(x, y);
-        //robot.delay(1000);
-        robot.mousePress(InputEvent.BUTTON3_DOWN_MASK); // щелчок ()
-        robot.mouseRelease(InputEvent.BUTTON3_DOWN_MASK);
-        Thread.sleep(2000);
-        // webDriver.quit();
-        System.out.println("End test1");
-
-        Thread.sleep(2000);
-        System.out.println("Start test2");
-        Actions actions = new Actions(webDriver);
-
-
-        try {
-            List<WebElement> li = webDriver.findElements(By.tagName("li"));//получаю список всех элемнтов
-            actions.click(li.get(5))
-                    //.keyDown(Keys.)//нажатие на клавишу control
-                    .click()
-                    .perform();//метод запускает выполнение
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Actions action = new Actions(webDriver).contextClick(webDriver.findElement(By.cssSelector("body > div.wy-grid-for-nav > section > div > div > div > p > span")));
+        action.build().perform();
         WebElement button = null;
 
         try {
-            button = webDriver.findElement(By.name("Quit"));
+            button = webDriver.findElement(By.cssSelector(" body > ul > li.context-menu-item.context-menu-icon.context-menu-icon-quit "));
             button.click();
 
             WebDriver.TargetLocator targetLocator = webDriver.switchTo();
@@ -79,7 +50,6 @@ public class home_work17 {
 
         System.out.println("End test2");
         Thread.sleep(2000);
-
 
     }
 }
